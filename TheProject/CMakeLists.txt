@@ -3,4 +3,7 @@ project(TheProject)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(TheProject main.cpp)
+add_executable(TheProject main.cpp
+        functions/functions.h
+        functions/functions.cpp
+)

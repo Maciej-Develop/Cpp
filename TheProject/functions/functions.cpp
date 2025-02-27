@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <stdexcept>
+#include <random>
 
 
 bool isPrime(unsigned number) {
@@ -51,4 +52,11 @@ unsigned gcd(unsigned a, unsigned b) {
         return a;
     }
     return gcd(b, a % b);
+}
+
+unsigned getRandomBetween0and99() {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 99);
+    return dis(gen);
 }

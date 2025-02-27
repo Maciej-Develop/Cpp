@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "classes/FootballPlayer.h"
 #include "functions/functions.h"
 
 int main() {
@@ -30,4 +31,18 @@ int main() {
     std::cout << dividend << " = " << pair.first << " x " << divisor << " + " << pair.second << std::endl;*/
 
     /*std::cout << gcd(423,135) << std::endl;*/
+
+    FootballPlayer player("Kylian", 0);
+    FootballPlayer player2("Kevin", 0);
+
+    FootballPlayer evilPlayer(player);
+    FootballPlayer evilPlayer2(player2);
+
+    evilPlayer.takePossession();
+    evilPlayer.pass(evilPlayer2);
+    evilPlayer2.shoot();
+
+    player.takePossession();
+    player.pass(player2);
+    player2.shoot();
 }

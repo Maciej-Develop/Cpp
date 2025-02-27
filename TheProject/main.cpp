@@ -19,8 +19,15 @@ int main() {
         }
     }*/
 
-    std::cout << std::boolalpha << isPrime(5) << std::endl;
+    /*std::cout << std::boolalpha << isPrime(5) << std::endl;
     std::cout << std::boolalpha << isPrime(10) << std::endl;
     std::cout << std::boolalpha << isPalindrome("hello") << std::endl;
-    std::cout << std::boolalpha << isPalindrome("kayak") << std::endl;
+    std::cout << std::boolalpha << isPalindrome("kayak") << std::endl*/
+
+    /*int dividend = 10;
+    int divisor = 3;
+    std::pair<int, int> pair = euclideanDivision(dividend,divisor);
+    std::cout << dividend << " = " << pair.first << " x " << divisor << " + " << pair.second << std::endl;*/
+
+    /*std::cout << gcd(423,135) << std::endl;*/
 }

@@ -1,6 +1,7 @@
 #include "functions.h"
 
 #include <cmath>
+#include <stdexcept>
 
 
 bool isPrime(unsigned number) {
@@ -34,4 +35,20 @@ bool isPalindrome(const std::string &myInputString) {
         back--;
     }
     return true;
+}
+
+std::pair<int, int> euclideanDivision(int dividend, int divisor) {
+    if (divisor == 0) {
+        throw std::invalid_argument("Divisor cannot be zero");
+    }
+    int first = dividend / divisor;
+    int second = dividend % divisor;
+    return std::make_pair(first, second);
+}
+
+unsigned gcd(unsigned a, unsigned b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
 }

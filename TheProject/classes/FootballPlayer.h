@@ -2,31 +2,26 @@
 #define FOOTBALLPLAYER_H
 #include <string>
 
+#include "Ball.h"
+
 class FootballPlayer {
     std::string name;
     int goalsScored;
-    double distanceFromGoal;
-    bool possessBall;
+    double distanceFromGoal = 15.0;
+    bool possessBall = false;
 
 public:
-    FootballPlayer(const std::string &name, int goals_scored): name(name), goalsScored(goals_scored),
-                                                               distanceFromGoal(15), possessBall(false) {
-    }
+    FootballPlayer(const std::string &name, int goals_scored);
 
-    FootballPlayer(const FootballPlayer &other) {
-        name = other.name + " copy";
-        goalsScored = other.goalsScored;
-        distanceFromGoal = other.distanceFromGoal;
-        possessBall = other.possessBall;
-    }
+    FootballPlayer(const FootballPlayer &other);
 
-    void takePossession();
+    void takePossession(Ball & ball);
 
     void move(double distanceFromGoal);
 
-    bool shoot();
+    bool shoot(Ball & ball);
 
-    void pass(FootballPlayer &other);
+    void pass(Ball & ball, FootballPlayer &other);
 };
 
 

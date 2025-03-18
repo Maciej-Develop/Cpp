@@ -8,4 +8,5 @@ add_executable(TheProject main.cpp
         functions/functions.cpp
         classes/FootballPlayer.cpp
         classes/FootballPlayer.h
+        classes/Ball.h
 )

@@ -34,15 +34,22 @@ int main() {
 
     FootballPlayer player("Kylian", 0);
     FootballPlayer player2("Kevin", 0);
+    Ball ball;
 
     FootballPlayer evilPlayer(player);
     FootballPlayer evilPlayer2(player2);
 
-    evilPlayer.takePossession();
-    evilPlayer.pass(evilPlayer2);
-    evilPlayer2.shoot();
+    evilPlayer.takePossession(ball);
+    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
+    evilPlayer.pass(ball,evilPlayer2);
+    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
+    evilPlayer2.shoot(ball);
+    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
 
-    player.takePossession();
-    player.pass(player2);
-    player2.shoot();
+    player.takePossession(ball);
+    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
+    player.pass(ball,player2);
+    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
+    player2.shoot(ball);
+    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
 }

@@ -9,4 +9,6 @@ add_executable(TheProject main.cpp
         classes/FootballPlayer.cpp
         classes/FootballPlayer.h
         classes/Ball.h
+        memory/Song.cpp
+        memory/Song.h
 )

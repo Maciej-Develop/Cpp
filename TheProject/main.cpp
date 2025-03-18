@@ -2,10 +2,9 @@
 
 #include "classes/FootballPlayer.h"
 #include "functions/functions.h"
+#include "memory/Song.h"
 
 int main() {
-    std::cout << "Hello World!" << std::endl;
-
     /*int i = 0;
     while (i < 3) {
         try {
@@ -32,7 +31,7 @@ int main() {
 
     /*std::cout << gcd(423,135) << std::endl;*/
 
-    FootballPlayer player("Kylian", 0);
+    /*FootballPlayer player("Kylian", 0);
     FootballPlayer player2("Kevin", 0);
     Ball ball;
 
@@ -51,5 +50,14 @@ int main() {
     player.pass(ball,player2);
     std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
     player2.shoot(ball);
-    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;
+    std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;*/
+
+    //created on the stack
+    Song mySong("mon sinus","Huntrill", "replica2");
+    Song mySongCopy = mySong;
+    Song& mySongRef = mySong;
+
+    mySong.setTitle("Hello World!");
+
+    std::cout << "Hello World!" << std::endl;
 }

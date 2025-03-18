@@ -1,8 +1,15 @@
+#include <cmath>
 #include <iostream>
 
 #include "classes/FootballPlayer.h"
 #include "functions/functions.h"
 #include "memory/Song.h"
+
+void triggerMemoryLeak() {
+    while (true) {
+        Song * song = new Song("A","B","C");
+    }
+}
 
 int main() {
     /*int i = 0;
@@ -52,12 +59,23 @@ int main() {
     player2.shoot(ball);
     std::cout << "ball distance : " << ball.distanceFromTheGoal << std::endl;*/
 
+    const int audioBufferSize = 10000;
+    const int audioSampleRate = 44100;
+    const int frequency = 440;
+    float* audioBuffer = new float[audioBufferSize];
+    for (int i = 0; i < audioBufferSize; i++) {
+        audioBuffer[i] = std::sin(2 * M_PI * i / audioBufferSize);
+    }
+
+
     //created on the stack
-    Song mySong("mon sinus","Huntrill", "replica2");
+    Song mySong("mon sinus","Huntrill", "replica2", audioBuffer, audioBufferSize);
+    //created on the heap
+    //Song * mySong = new Song("mon sinus","Huntrill", "replica2");
     Song mySongCopy = mySong;
     Song& mySongRef = mySong;
 
     mySong.setTitle("Hello World!");
 
-    std::cout << "Hello World!" << std::endl;
+    //triggerMemoryLeak();
 }

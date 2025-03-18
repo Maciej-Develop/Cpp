@@ -3,11 +3,12 @@
 
 #include "classes/FootballPlayer.h"
 #include "functions/functions.h"
+#include "memory/AudioPlayer.h"
 #include "memory/Song.h"
 
 void triggerMemoryLeak() {
     while (true) {
-        Song * song = new Song("A","B","C");
+        Song * song = new Song("A","B","C", nullptr,0);
     }
 }
 
@@ -69,13 +70,16 @@ int main() {
 
 
     //created on the stack
-    Song mySong("mon sinus","Huntrill", "replica2", audioBuffer, audioBufferSize);
+    //Song mySong("mon sinus","Huntrill", "replica2", audioBuffer, audioBufferSize);
     //created on the heap
-    //Song * mySong = new Song("mon sinus","Huntrill", "replica2");
-    Song mySongCopy = mySong;
-    Song& mySongRef = mySong;
+    auto mySong = new Song("mon sinus","Huntrill", "replica2",audioBuffer, audioBufferSize);
+    //Song mySongCopy = *mySong;
+    //Song& mySongRef = *mySong;
 
-    mySong.setTitle("Hello World!");
+    mySong->setTitle("Hello World!");
 
     //triggerMemoryLeak();
+
+    AudioPlayer audioManager(1.0f);
+    audioManager.play(mySong);
 }

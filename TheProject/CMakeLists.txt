@@ -11,4 +11,6 @@ add_executable(TheProject main.cpp
         classes/Ball.h
         memory/Song.cpp
         memory/Song.h
+        memory/AudioPlayer.cpp
+        memory/AudioPlayer.h
 )

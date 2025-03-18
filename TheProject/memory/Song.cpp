@@ -24,3 +24,11 @@ const std::string &Song::getAlbum() const {
 const std::string &Song::getArtist() const {
     return this->artist;
 }
+
+float *Song::getAudioBuffer() const {
+    return this->audioBuffer;
+}
+
+int Song::getAudioBufferSize() const {
+    return this->audioBufferSize;
+}

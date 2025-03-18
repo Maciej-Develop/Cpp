@@ -23,6 +23,10 @@ public:
 
     const std::string &getArtist() const;
 
+    float *getAudioBuffer() const;
+
+    int getAudioBufferSize() const;
+
     void setTitle(const std::string &title);
 };
 
